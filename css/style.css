@@ -1614,3 +1614,56 @@ body {
     font-size: 1.8rem;
   }
 }
+
+/* ============================
+   ACCESSIBILITY — Reduced Motion
+   ============================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-stagger {
+    opacity: 1;
+    animation: none;
+  }
+
+  .holo-text {
+    animation: none;
+  }
+
+  .scroll-progress {
+    animation: none;
+  }
+}
+
+/* ============================
+   PRINT STYLES
+   ============================ */
+
+@media print {
+  .nav, .scroll-progress, .back-to-top, .grain-overlay, .lightbox {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .hero-image::before {
+    display: none;
+  }
+}
