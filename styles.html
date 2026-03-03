@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Picker — Miss Messy Bun Website Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600;700&family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #A911CF;
+      --teal: #5CE1E6;
+      --lime: #C1FF72;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0d1a;
+      color: #e8e8e8;
+      line-height: 1.6;
+    }
+
+    /* --- Top banner --- */
+    .picker-banner {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .picker-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .picker-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+    .picker-banner a {
+      color: white;
+      text-decoration: underline;
+    }
+    .back-link {
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* --- Style cards container --- */
+    .styles-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .style-label {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
+      background: rgba(169, 17, 207, 0.2);
+      color: var(--teal);
+      border: 1px solid rgba(92, 225, 230, 0.2);
+    }
+
+    .style-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .style-desc {
+      font-size: 0.9rem;
+      color: #a0a0b8;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Each style preview --- */
+    .style-preview {
+      margin-bottom: 3rem;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .style-preview-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .style-preview-body {
+      overflow: hidden;
+    }
+
+    /* === STYLE 1: Dark & Luxe (current) === */
+    .s1-hero {
+      background: #1a1a2e;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .s1-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 40%, rgba(169, 17, 207, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 60%, rgba(92, 225, 230, 0.1) 0%, transparent 50%);
+    }
+    .s1-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+    .s1-hero p {
+      color: #a0a0b8;
+      font-size: 1rem;
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto 1.5rem;
+    }
+    .s1-btn {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .s1-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .s1-grid img { width: 100%; height: 180px; object-fit: cover; display: block; }
+
+    /* === STYLE 2: Soft & Ethereal === */
+    .s2-hero {
+      background: linear-gradient(180deg, #fdf4ff 0%, #f0e6ff 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s2-hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #5a1a6b;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .s2-hero p {
+      color: #8a6b99;
+      font-size: 1rem;
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .s2-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #c084fc, #67e8f9);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .s2-cards {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      background: #faf5ff;
+      overflow-x: auto;
+    }
+    .s2-card {
+      min-width: 200px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(90, 26, 107, 0.08);
+      flex-shrink: 0;
+    }
+    .s2-card img { width: 100%; height: 160px; object-fit: cover; }
+    .s2-card-text { padding: 1rem; color: #5a1a6b; font-family: 'Quicksand', sans-serif; font-size: 0.85rem; font-weight: 600; }
+
+    /* === STYLE 3: Bold & Modern === */
+    .s3-hero {
+      background: #000;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .s3-hero-text { flex: 1; }
+    .s3-hero h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 2.4rem;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+    .s3-hero h2 span {
+      background: linear-gradient(135deg, var(--purple), var(--teal), var(--lime));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .s3-hero p {
+      color: #888;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .s3-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: 'Josefin Sans', sans-serif;
+      transition: all 0.3s ease;
+    }
+    .s3-hero-img {
+      flex: 1;
+      max-width: 300px;
+    }
+    .s3-hero-img img {
+      width: 100%;
+      border-radius: 0;
+      display: block;
+      filter: saturate(0.7);
+    }
+
+    /* === STYLE 4: Warm & Earthy === */
+    .s4-hero {
+      background: #2c1810;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s4-hero h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: #f5e6d3;
+      margin-bottom: 0.8rem;
+    }
+    .s4-hero h2 span { color: #e8a87c; }
+    .s4-hero p {
+      color: #c4a882;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      max-width: 430px;
+      margin: 0 auto 1.5rem;
+    }
+    .s4-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #e8a87c, #d4804e);
+      color: #2c1810;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: 'Nunito', sans-serif;
+    }
+    .s4-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #3a2218;
+    }
+    .s4-grid img { width: 100%; height: 180px; object-fit: cover; display: block; filter: sepia(0.2) saturate(0.9); }
+
+    /* === STYLE 5: Clean & Minimal === */
+    .s5-hero {
+      background: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s5-hero h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      color: #222;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .s5-hero h2 em { font-style: italic; color: var(--purple); }
+    .s5-hero p {
+      color: #777;
+      font-size: 0.95rem;
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+    }
+    .s5-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .s5-services {
+      display: flex;
+      gap: 0;
+      background: #fafafa;
+    }
+    .s5-service {
+      flex: 1;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid #eee;
+    }
+    .s5-service:last-child { border-right: none; }
+    .s5-service h4 { font-family: 'Libre Baskerville', serif; color: #222; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .s5-service p { color: #999; font-size: 0.8rem; }
+
+    /* === STYLE 6: Holographic Maximalism === */
+    .s6-hero {
+      background: #0a0a1a;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .s6-hero::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: conic-gradient(from 0deg, var(--purple), var(--teal), var(--lime), var(--purple));
+      opacity: 0.15;
+      animation: s6spin 8s linear infinite;
+    }
+    @keyframes s6spin { to { transform: rotate(360deg); } }
+    .s6-hero h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--purple), var(--teal), var(--lime), var(--purple));
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: s6holo 4s ease infinite;
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+    @keyframes s6holo { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .s6-hero p {
+      color: #8888aa;
+      font-family: 'Josefin Sans', sans-serif;
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+    }
+    .s6-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--purple), var(--teal), var(--lime));
+      background-size: 200% 200%;
+      animation: s6holo 3s ease infinite;
+      color: #0a0a1a;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: 'Josefin Sans', sans-serif;
+      position: relative;
+    }
+    .s6-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+      background: #0a0a1a;
+    }
+    .s6-gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.1) saturate(1.2);
+    }
+
+    /* === STYLE 7: Organic & Natural === */
+    .s7-hero {
+      background: #f7f3ee;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .s7-hero-img {
+      flex: 1;
+      max-width: 280px;
+    }
+    .s7-hero-img img {
+      width: 100%;
+      border-radius: 999px;
+      display: block;
+      border: 4px solid #e8ddd0;
+    }
+    .s7-hero-text { flex: 1.5; }
+    .s7-hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #3d2c1e;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .s7-hero h2 span { color: #7c5e3a; font-style: italic; }
+    .s7-hero p {
+      color: #8a7562;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .s7-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      background: #3d2c1e;
+      color: #f7f3ee;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    /* === STYLE 8: Gradient Glass === */
+    .s8-hero {
+      background: linear-gradient(135deg, #1a0030, #002030, #001a10);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s8-hero h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .s8-hero p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+    }
+    .s8-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .s8-features {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #120020, #001820);
+    }
+    .s8-card {
+      flex: 1;
+      padding: 1.5rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .s8-card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .s8-card h4 { color: #fff; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .s8-card p { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .s3-hero { flex-direction: column; text-align: center; }
+      .s3-hero-img { max-width: 200px; }
+      .s7-hero { flex-direction: column; text-align: center; }
+      .s7-hero-img { max-width: 200px; }
+      .s1-grid, .s4-grid { grid-template-columns: repeat(3, 1fr); }
+      .s6-gallery { grid-template-columns: repeat(2, 1fr); }
+      .s5-services { flex-direction: column; }
+      .s5-service { border-right: none; border-bottom: 1px solid #eee; }
+      .s8-features { flex-direction: column; }
+      .picker-banner h1 { font-size: 1.2rem; }
+      .back-link { position: static; display: block; margin-bottom: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="picker-banner">
+    <a href="index.html" class="back-link">&larr; Back to Site</a>
+    <h1>Pick Your Vibe</h1>
+    <p>Tap through these styles and tell me which ones you love! Mix & match is totally fine.</p>
+  </div>
+
+  <div class="styles-container">
+
+    <!-- STYLE 1 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 1</span>
+        <div class="style-name">Dark & Luxe</div>
+        <div class="style-desc">Moody, elegant, premium feel. The holographic shimmer on dark gives a high-end salon vibe. (This is the current design)</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s1-hero">
+          <h2>Nurturing Crowns with Intention & Care</h2>
+          <p>Holistic loctician and natural stylist. Your crown deserves intentional, nurturing hands.</p>
+          <a href="#" class="s1-btn">Book an Appointment</a>
+        </div>
+        <div class="s1-grid">
+          <img src="images/ig-post-saltpepper.jpg" alt="Work sample">
+          <img src="images/ig-post-starterlocs.jpg" alt="Work sample">
+          <img src="images/ig-post-portfolio.jpg" alt="Work sample">
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 2 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 2</span>
+        <div class="style-name">Soft & Ethereal</div>
+        <div class="style-desc">Dreamy lavender & light pastels. Feminine, approachable, spa-like. Great for attracting clients who want a calming experience.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s2-hero">
+          <h2>Your Crown, Nurtured</h2>
+          <p>Holistic hair care rooted in intention, plant-based love, and protective artistry.</p>
+          <a href="#" class="s2-btn">Book Your Visit</a>
+        </div>
+        <div class="s2-cards">
+          <div class="s2-card"><img src="images/ig-post-saltpepper.jpg" alt=""><div class="s2-card-text">Loc Extensions</div></div>
+          <div class="s2-card"><img src="images/ig-post-starterlocs.jpg" alt=""><div class="s2-card-text">Starter Locs</div></div>
+          <div class="s2-card"><img src="images/ig-post-cutting.jpg" alt=""><div class="s2-card-text">Precision Cuts</div></div>
+          <div class="s2-card"><img src="images/ig-post-portfolio.jpg" alt=""><div class="s2-card-text">Protective Styles</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 3 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 3</span>
+        <div class="style-name">Bold & Modern</div>
+        <div class="style-desc">Black background, strong typography, editorial look. Makes a statement. Confident, powerful, fashion-forward.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s3-hero">
+          <div class="s3-hero-text">
+            <h2>Your Crown.<br><span>Your Rules.</span></h2>
+            <p>Holistic loctician. Natural stylist. Plant-based care and protective artistry in Santa Cruz.</p>
+            <a href="#" class="s3-btn">Book Now</a>
+          </div>
+          <div class="s3-hero-img">
+            <img src="images/ig-post-2025wrap.jpg" alt="Work sample">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 4 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 4</span>
+        <div class="style-name">Warm & Earthy</div>
+        <div class="style-desc">Rich browns, terracotta, warm gold tones. Natural, grounded, inviting. Matches the holistic & plant-based brand perfectly.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s4-hero">
+          <h2>Nurturing <span>Your Crown</span> with Intention</h2>
+          <p>Holistic hair care rooted in nature. Plant-based products, protective artistry, and genuine love for your natural beauty.</p>
+          <a href="#" class="s4-btn">Book an Appointment</a>
+        </div>
+        <div class="s4-grid">
+          <img src="images/ig-post-welcome.jpg" alt="Work sample">
+          <img src="images/ig-post-newservices.jpg" alt="Work sample">
+          <img src="images/ig-post-cutting.jpg" alt="Work sample">
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 5 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 5</span>
+        <div class="style-name">Clean & Minimal</div>
+        <div class="style-desc">White space, elegant serif font, black & white with a purple accent. Timeless, professional, lets the work speak for itself.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s5-hero">
+          <h2>Nurturing Crowns with <em>Intention</em></h2>
+          <p>Holistic loctician and natural stylist specializing in plant-based care and protective artistry.</p>
+          <a href="#" class="s5-btn">BOOK APPOINTMENT</a>
+        </div>
+        <div class="s5-services">
+          <div class="s5-service"><h4>Loc Installation</h4><p>Start your journey</p></div>
+          <div class="s5-service"><h4>Maintenance</h4><p>Keep locs thriving</p></div>
+          <div class="s5-service"><h4>Protective Styles</h4><p>Beautiful & healthy</p></div>
+          <div class="s5-service"><h4>Consultations</h4><p>Personalized plan</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 6 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 6</span>
+        <div class="style-name">Holographic Maximalism</div>
+        <div class="style-desc">ALL three brand colors cranked up. Spinning gradients, bold animation, neon energy. Eye-catching, unforgettable, Gen-Z friendly.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s6-hero">
+          <h2>Miss Messy Bun</h2>
+          <p>Holistic loctician. Natural stylist. Santa Cruz, CA.</p>
+          <a href="#" class="s6-btn">Book Now</a>
+        </div>
+        <div class="s6-gallery">
+          <img src="images/ig-post-saltpepper.jpg" alt="">
+          <img src="images/ig-post-starterlocs.jpg" alt="">
+          <img src="images/ig-post-2025wrap.jpg" alt="">
+          <img src="images/ig-post-portfolio.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 7 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 7</span>
+        <div class="style-name">Organic & Natural</div>
+        <div class="style-desc">Warm cream background, earthy serif fonts, rounded profile photo. Friendly, approachable, feels like a warm hug. Great for word-of-mouth clients.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s7-hero">
+          <div class="s7-hero-img">
+            <img src="images/profile-avatar.jpg" alt="Miss Messy Bun">
+          </div>
+          <div class="s7-hero-text">
+            <h2>Hello, I'm <span>Miss Messy Bun</span></h2>
+            <p>Holistic loctician and natural stylist nurturing crowns with intention, plant-based care, and protective artistry in Santa Cruz, California.</p>
+            <a href="#" class="s7-btn">Book an Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 8 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 8</span>
+        <div class="style-name">Gradient Glass</div>
+        <div class="style-desc">Deep dark gradients with frosted glass cards. Sleek, modern, tech-forward. The teal accent pops against the deep purple-black background.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s8-hero">
+          <h2>Nurturing Crowns with Care</h2>
+          <p>Holistic loctician and natural stylist. Plant-based care meets protective artistry.</p>
+          <a href="#" class="s8-btn">Book Your Visit</a>
+        </div>
+        <div class="s8-features">
+          <div class="s8-card"><div class="s8-card-icon">&#x1F331;</div><h4>Plant-Based</h4><p>Natural products only</p></div>
+          <div class="s8-card"><div class="s8-card-icon">&#x2728;</div><h4>Protective</h4><p>Styles that nurture</p></div>
+          <div class="s8-card"><div class="s8-card-icon">&#x1F33F;</div><h4>Holistic</h4><p>Root to tip care</p></div>
+          <div class="s8-card"><div class="s8-card-icon">&#x1F338;</div><h4>Sustainable</h4><p>Eco-friendly extensions</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
