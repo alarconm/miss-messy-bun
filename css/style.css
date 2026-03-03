@@ -1137,6 +1137,47 @@ body {
   color: var(--teal);
 }
 
+/* --- Powered By CardFlow Labs --- */
+.powered-by {
+  max-width: 1400px;
+  margin: 1.5rem auto 0;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.powered-by:hover {
+  opacity: 0.8;
+}
+
+.cardflow-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #00C8E0, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s ease;
+}
+
+.cardflow-logo:hover {
+  opacity: 0.9;
+}
+
 /* --- Instagram Follow Strip --- */
 .ig-strip {
   background: var(--surface-2);
