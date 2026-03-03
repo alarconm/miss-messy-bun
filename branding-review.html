@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miss Messy Bun — Branding Suite Review</title>
+  <title>Miss Messy Bun — Style & Layout Ideas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -147,10 +147,6 @@
       gap: 1.5rem;
     }
 
-    .card-grid.small {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -164,26 +160,8 @@
       box-shadow: 0 12px 40px rgba(169, 17, 207, 0.08);
     }
 
-    .card-img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: contain;
-      background: #fafafa;
-      padding: 1rem;
-    }
-
-    .card-img.dark-bg {
-      background: #1a1a2e;
-    }
-
-    .card-img.cover {
-      object-fit: cover;
-      padding: 0;
-    }
-
     .card-body {
       padding: 1.25rem;
-      border-top: 1px solid var(--border);
     }
 
     .card-label {
@@ -213,22 +191,9 @@
       border-radius: 20px;
     }
 
-    .tag-icon { background: rgba(169, 17, 207, 0.1); color: var(--purple); }
-    .tag-logo { background: rgba(92, 225, 230, 0.1); color: #0a9a9e; }
-    .tag-social { background: rgba(193, 255, 114, 0.15); color: #5a8a00; }
-    .tag-print { background: rgba(169, 17, 207, 0.08); color: #8a5ab0; }
-
-    /* Existing logos comparison */
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 800px;
-    }
-
-    .comparison .card-img {
-      background: white;
-    }
+    .tag-a { background: rgba(169, 17, 207, 0.1); color: var(--purple); }
+    .tag-b { background: rgba(92, 225, 230, 0.1); color: #0a9a9e; }
+    .tag-c { background: rgba(193, 255, 114, 0.15); color: #5a8a00; }
 
     /* Divider */
     .divider {
@@ -241,6 +206,408 @@
       border: none;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* Layout mockups */
+    .mockup {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 16/10;
+      position: relative;
+    }
+
+    /* Option A: Dark hero, full-width image */
+    .mockup-dark-hero {
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-dark-hero .mock-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+    }
+    .mockup-dark-hero .mock-nav .mock-logo {
+      width: 50px;
+      height: 14px;
+      background: var(--lavender);
+      border-radius: 3px;
+      opacity: 0.8;
+    }
+    .mockup-dark-hero .mock-nav .mock-links {
+      display: flex;
+      gap: 8px;
+    }
+    .mockup-dark-hero .mock-nav .mock-links span {
+      width: 24px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+    }
+    .mockup-dark-hero .mock-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(169,17,207,0.15), rgba(92,225,230,0.1));
+    }
+    .mockup-dark-hero .mock-hero .mock-heading {
+      font-family: 'Josefin Sans', sans-serif;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    .mockup-dark-hero .mock-hero .mock-sub {
+      color: rgba(255,255,255,0.4);
+      font-size: 6px;
+      letter-spacing: 2px;
+    }
+    .mockup-dark-hero .mock-hero .mock-btn {
+      margin-top: 4px;
+      padding: 3px 14px;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      border-radius: 3px;
+      color: white;
+      font-size: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Option B: Split layout */
+    .mockup-split {
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-split .mock-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-split .mock-nav .mock-logo {
+      width: 50px;
+      height: 14px;
+      background: var(--purple);
+      border-radius: 3px;
+      opacity: 0.6;
+    }
+    .mockup-split .mock-nav .mock-links {
+      display: flex;
+      gap: 8px;
+    }
+    .mockup-split .mock-nav .mock-links span {
+      width: 24px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+    }
+    .mockup-split .mock-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mockup-split .mock-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 20px;
+      gap: 6px;
+    }
+    .mockup-split .mock-left .mock-heading {
+      font-family: 'Josefin Sans', sans-serif;
+      color: var(--text);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    .mockup-split .mock-left .mock-sub {
+      color: var(--text-muted);
+      font-size: 5px;
+      line-height: 1.6;
+    }
+    .mockup-split .mock-left .mock-btn {
+      margin-top: 4px;
+      padding: 3px 12px;
+      background: var(--dark);
+      border-radius: 3px;
+      color: white;
+      font-size: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+    .mockup-split .mock-right {
+      background: linear-gradient(135deg, var(--lavender) 0%, rgba(92,225,230,0.2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mockup-split .mock-right .mock-photo {
+      width: 60%;
+      aspect-ratio: 3/4;
+      background: rgba(169,17,207,0.12);
+      border-radius: 8px;
+      border: 2px dashed rgba(169,17,207,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mockup-split .mock-right .mock-photo span {
+      font-size: 5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Option C: Earthy/botanical */
+    .mockup-botanical {
+      background: #f5f0eb;
+      display: flex;
+      flex-direction: column;
+    }
+    .mockup-botanical .mock-nav {
+      display: flex;
+      justify-content: center;
+      padding: 10px 16px;
+    }
+    .mockup-botanical .mock-nav .mock-logo {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #5a4a3a;
+      font-weight: 300;
+    }
+    .mockup-botanical .mock-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .mockup-botanical .mock-hero .mock-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(90,74,58,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mockup-botanical .mock-hero .mock-circle span {
+      font-size: 5px;
+      color: #8a7a6a;
+      letter-spacing: 1px;
+    }
+    .mockup-botanical .mock-hero .mock-heading {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #5a4a3a;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    .mockup-botanical .mock-hero .mock-sub {
+      color: #8a7a6a;
+      font-size: 5px;
+      letter-spacing: 2px;
+    }
+    .mockup-botanical .mock-hero .mock-btn {
+      margin-top: 2px;
+      padding: 3px 14px;
+      border: 1px solid #5a4a3a;
+      border-radius: 20px;
+      color: #5a4a3a;
+      font-size: 5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .mockup-botanical .mock-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px;
+    }
+    .mockup-botanical .mock-bottom span {
+      font-size: 4px;
+      color: #8a7a6a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* IG Grid Mockups */
+    .ig-mockup {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 8px;
+    }
+    .ig-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 4px 8px;
+    }
+    .ig-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+    }
+    .ig-name {
+      font-size: 6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .ig-cell {
+      aspect-ratio: 1;
+      border-radius: 2px;
+    }
+
+    /* IG Style A: Dark & moody */
+    .ig-dark .ig-cell:nth-child(odd) { background: var(--dark); }
+    .ig-dark .ig-cell:nth-child(even) { background: #2d1b4e; }
+    .ig-dark .ig-cell:nth-child(3n) { background: linear-gradient(135deg, var(--dark), #2d1b4e); }
+
+    /* IG Style B: Bright & airy */
+    .ig-bright .ig-cell:nth-child(odd) { background: #faf7f5; }
+    .ig-bright .ig-cell:nth-child(even) { background: var(--lavender); }
+    .ig-bright .ig-cell:nth-child(3n) { background: #f0e8f7; }
+    .ig-bright .ig-cell:nth-child(4) { background: rgba(92,225,230,0.15); }
+
+    /* IG Style C: Alternating branded */
+    .ig-branded .ig-cell:nth-child(3n+1) { background: var(--dark); }
+    .ig-branded .ig-cell:nth-child(3n+2) { background: var(--lavender); }
+    .ig-branded .ig-cell:nth-child(3n) { background: linear-gradient(135deg, rgba(169,17,207,0.2), rgba(92,225,230,0.2)); }
+
+    /* Photo mood tiles */
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .mood-tile {
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+
+    .mood-tile:hover { transform: translateY(-3px); }
+
+    .mood-tile h4 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .mood-tile p {
+      font-size: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .mood-dark {
+      background: var(--dark);
+      color: white;
+    }
+    .mood-dark h4 { color: var(--teal); }
+    .mood-dark p { color: rgba(255,255,255,0.6); }
+
+    .mood-bright {
+      background: #faf7f5;
+      color: var(--text);
+    }
+    .mood-bright h4 { color: var(--purple); }
+    .mood-bright p { color: var(--text-muted); }
+
+    .mood-earthy {
+      background: #f5f0eb;
+      color: #5a4a3a;
+    }
+    .mood-earthy h4 { color: #7a6a5a; }
+    .mood-earthy p { color: #8a7a6a; }
+
+    /* Feature Ideas */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .feature-item h4 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Current logo display */
+    .logo-display {
+      max-width: 400px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .logo-display img {
+      width: 100%;
+      padding: 1.5rem;
+      object-fit: contain;
+      background: #fafafa;
+    }
+
+    .logo-display .logo-caption {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
     }
 
     /* Footer */
@@ -336,7 +703,6 @@
       padding-right: 2.5rem;
     }
 
-    /* Submit button */
     .submit-btn {
       display: inline-block;
       padding: 0.8rem 2.5rem;
@@ -357,7 +723,6 @@
     .submit-btn:active { transform: translateY(0); }
     .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
-    /* Status messages */
     .form-status {
       margin-top: 1rem;
       padding: 1rem;
@@ -385,14 +750,15 @@
       .header { padding: 2rem 1.5rem; }
       .section { padding: 0 1rem; }
       .card-grid { grid-template-columns: 1fr; }
-      .card-grid.small { grid-template-columns: repeat(2, 1fr); }
-      .comparison { grid-template-columns: 1fr; }
+      .mood-grid { grid-template-columns: 1fr; }
+      .feature-list { grid-template-columns: 1fr; }
       .intro { margin: 1.5rem 1rem; padding: 1.5rem; }
       .feedback-form-card { padding: 1.5rem; }
+      .mockup-split .mock-body { grid-template-columns: 1fr; }
+      .mockup-split .mock-right { min-height: 60px; }
     }
 
     @media (max-width: 480px) {
-      .card-grid.small { grid-template-columns: 1fr 1fr; }
       .header h1 { letter-spacing: 3px; }
     }
   </style>
@@ -400,102 +766,226 @@
 <body>
 
   <div class="header">
-    <h1>Miss Messy Bun <span>Brand Guide</span></h1>
-    <p>Your finalized branding — logos, highlight icons, and color palette</p>
+    <h1>Miss Messy Bun <span>Style Guide</span></h1>
+    <p>Layout ideas, design direction, and visual inspiration for your brand</p>
     <span class="date">March 2026</span>
   </div>
 
   <div class="intro">
     <h3>Hey Sophie!</h3>
     <p>
-      Based on your feedback, we've locked in your brand identity. Everything below is what made the cut —
-      your chosen logo, updated highlight icons with bolder outlines, and your color palette.
-      These are ready to use across your website, Instagram, print materials, and anywhere else.
-      If you want to refine anything further, just use the feedback form at the bottom.
+      Your logo is locked in and live on the site. Now let's talk about the bigger picture &mdash;
+      how your website looks and feels, what vibe your Instagram gives off, and what features would
+      make your online presence even stronger. Look through these ideas and let me know what speaks to you.
+      Nothing here is final &mdash; just directions to get you thinking.
     </p>
   </div>
 
-  <!-- Section 1: Your Logo -->
+  <!-- Section 1: Your Logo (Actual) -->
   <div class="section">
-    <div class="section-number">01 — Your Logo</div>
-    <h2 class="section-title">Original <span>Icon</span></h2>
-    <p class="section-desc">Your chosen icon — Version B with "Hairstyling Naturally." Broader tagline that covers all your expanded services.</p>
-    <div class="comparison" style="grid-template-columns: 1fr; max-width: 400px;">
-      <div class="card">
-        <img class="card-img" src="images/branding/mmb-original-hairstyling.png" alt="Original logo - Hairstyling Naturally">
-        <div class="card-body">
-          <div class="card-label">Version B — Your Pick</div>
-          <div class="card-desc">"Hairstyling Naturally." — the one that fits who you are now</div>
-        </div>
+    <div class="section-number">01 &mdash; Your Logo</div>
+    <h2 class="section-title">Current <span>Logo</span></h2>
+    <p class="section-desc">This is your official logo, live on the website right now. If you ever want to update it, just send us the new file.</p>
+    <div class="logo-display">
+      <img src="images/mmb-logo-hairstyling.png" alt="Miss Messy Bun — Hairstyling Naturally">
+      <div class="logo-caption">
+        <div class="card-label">Your Logo &mdash; Live</div>
+        <div class="card-desc">Currently displayed in the site navigation and used as your primary brand mark.</div>
       </div>
     </div>
   </div>
 
   <div class="divider"><hr></div>
 
-  <!-- Section 2: Primary Logo -->
+  <!-- Section 2: Website Layout Ideas -->
   <div class="section">
-    <div class="section-number">02 — Primary Logo</div>
-    <h2 class="section-title">Your <span>Logo</span></h2>
-    <p class="section-desc">Your primary logo — the Icon + Text horizontal layout. Side-profile silhouette with "Hairstyling Naturally." Use this everywhere: website, social, print, business cards.</p>
-    <div class="card-grid" style="max-width: 500px;">
+    <div class="section-number">02 &mdash; Website Layout</div>
+    <h2 class="section-title">Homepage <span>Direction</span></h2>
+    <p class="section-desc">Three different approaches for how your homepage could look and feel. Which vibe fits you best?</p>
+    <div class="card-grid">
+
+      <!-- Layout A: Dark & luxe (current) -->
       <div class="card">
-        <img class="card-img" src="images/branding/mmb-logo-combined.png" alt="Combined logo - icon plus text">
-        <div class="card-body">
-          <div class="card-label">Icon + Text — Horizontal</div>
-          <div class="card-desc">Side-profile silhouette in lavender circle paired with stacked text and "Hairstyling Naturally." script. Your primary logo for everything.</div>
-          <span class="card-tag tag-logo">Primary Logo / Website / Print / Social</span>
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="mockup mockup-dark-hero">
+            <div class="mock-nav">
+              <div class="mock-logo"></div>
+              <div class="mock-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-heading">Miss Messy Bun</div>
+              <div class="mock-sub">HAIRSTYLING NATURALLY</div>
+              <div class="mock-btn">Book Now</div>
+            </div>
+          </div>
         </div>
+        <div class="card-body">
+          <div class="card-label">Option A &mdash; Dark & Luxe</div>
+          <div class="card-desc">What you have now. Dark botanical background, moody and premium. Purple/teal gradient accents, luxury salon vibe. Great for standing out and feeling high-end.</div>
+          <span class="card-tag tag-a">Current Design</span>
+        </div>
+      </div>
+
+      <!-- Layout B: Clean & split -->
+      <div class="card">
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="mockup mockup-split">
+            <div class="mock-nav">
+              <div class="mock-logo"></div>
+              <div class="mock-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-left">
+                <div class="mock-heading">Miss Messy Bun</div>
+                <div class="mock-sub">Holistic loctician and natural hair stylist based in Santa Cruz</div>
+                <div class="mock-btn">Book Now</div>
+              </div>
+              <div class="mock-right">
+                <div class="mock-photo"><span>Your Photo</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-label">Option B &mdash; Clean & Modern</div>
+          <div class="card-desc">White background with a split layout &mdash; text on the left, a big beautiful photo of your work on the right. Bright, professional, and easy to read. Lets your portfolio shine.</div>
+          <span class="card-tag tag-b">Fresh Direction</span>
+        </div>
+      </div>
+
+      <!-- Layout C: Earthy & minimal -->
+      <div class="card">
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="mockup mockup-botanical">
+            <div class="mock-nav">
+              <div class="mock-logo">MISS MESSY BUN</div>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-circle"><span>LOGO</span></div>
+              <div class="mock-heading">Hairstyling Naturally</div>
+              <div class="mock-sub">HOLISTIC CARE FOR YOUR CROWN</div>
+              <div class="mock-btn">EXPLORE</div>
+            </div>
+            <div class="mock-bottom">
+              <span>About</span>
+              <span>Services</span>
+              <span>Portfolio</span>
+              <span>Book</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-label">Option C &mdash; Earthy & Minimal</div>
+          <div class="card-desc">Warm, neutral tones. Centered layout with lots of white space. Feels organic, calm, holistic &mdash; like a wellness brand. Less "salon," more "experience." Muted and grounded.</div>
+          <span class="card-tag tag-c">Wellness Vibe</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 3: Photography & Mood Direction -->
+  <div class="section">
+    <div class="section-number">03 &mdash; Photo Direction</div>
+    <h2 class="section-title">Photography <span>Mood</span></h2>
+    <p class="section-desc">The photos on your site set the tone for your entire brand. Which mood matches the feeling you want clients to get?</p>
+    <div class="mood-grid">
+      <div class="mood-tile mood-dark">
+        <h4>Dark & Editorial</h4>
+        <p>Deep backgrounds, dramatic lighting, studio-quality feel. Think magazine editorial. Makes your work look high-fashion and exclusive. Great with your current dark site theme.</p>
+      </div>
+      <div class="mood-tile mood-bright">
+        <h4>Bright & Natural</h4>
+        <p>Natural light, soft tones, warm and inviting. Think golden hour by the window. Makes your work feel approachable and personal. Great for showing the real you.</p>
+      </div>
+      <div class="mood-tile mood-earthy">
+        <h4>Earthy & Organic</h4>
+        <p>Warm neutrals, linen textures, plant accents. Think holistic wellness studio. Matches your "hairstyling naturally" philosophy. Calm, grounded, and intentional.</p>
       </div>
     </div>
   </div>
 
   <div class="divider"><hr></div>
 
-  <!-- Section 3: IG Highlight Icons -->
+  <!-- Section 4: Instagram Aesthetic -->
   <div class="section">
-    <div class="section-number">03 — Instagram Highlights</div>
-    <h2 class="section-title">IG Highlight <span>Icons</span></h2>
-    <p class="section-desc">Updated with bolder dark purple outlines for better visibility. Lavender background, cohesive and on-brand. Ready to upload to your IG highlights.</p>
-    <div class="card-grid small">
+    <div class="section-number">04 &mdash; Instagram Grid</div>
+    <h2 class="section-title">IG Feed <span>Aesthetic</span></h2>
+    <p class="section-desc">Your Instagram grid is your visual portfolio. Here are three different approaches to how your feed could look as a whole.</p>
+    <div class="card-grid">
+
       <div class="card">
-        <img class="card-img" src="images/branding/mmb-highlight-crown.png" alt="Crown highlight icon">
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="ig-mockup ig-dark">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-name">@officialmissmessybun</div>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+            </div>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-label">Crown</div>
-          <div class="card-desc">For: About Me, Brand Story, or VIP</div>
+          <div class="card-label">Dark & Moody Grid</div>
+          <div class="card-desc">Consistent dark backgrounds throughout your feed. Every photo has a similar dark, luxurious tone. Creates a cohesive, dramatic look when someone visits your profile.</div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="images/branding/mmb-highlight-scissors.png" alt="Scissors highlight icon">
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="ig-mockup ig-bright">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-name">@officialmissmessybun</div>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+            </div>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-label">Scissors</div>
-          <div class="card-desc">For: Services, Cuts, or Tutorials</div>
+          <div class="card-label">Light & Airy Grid</div>
+          <div class="card-desc">Soft, bright photos with lavender tones weaved in. Feels feminine, clean, and inviting. Easy to maintain &mdash; just shoot in natural light with a clean background.</div>
         </div>
       </div>
+
       <div class="card">
-        <img class="card-img" src="images/branding/mmb-highlight-leaf.png" alt="Monstera leaf highlight icon">
+        <div style="padding: 1rem; background: #fafafa;">
+          <div class="ig-mockup ig-branded">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-name">@officialmissmessybun</div>
+            </div>
+            <div class="ig-grid">
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+              <div class="ig-cell"></div><div class="ig-cell"></div><div class="ig-cell"></div>
+            </div>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-label">Monstera Leaf</div>
-          <div class="card-desc">For: Products, Holistic Care, or Self-Care</div>
+          <div class="card-label">Alternating Brand Grid</div>
+          <div class="card-desc">Pattern of dark photos, lavender graphics, and gradient-tinted images. Creates a "checkerboard" effect on your profile. More visual variety, but takes more planning.</div>
         </div>
       </div>
-      <div class="card">
-        <img class="card-img" src="images/branding/mmb-highlight-star.png" alt="Star highlight icon">
-        <div class="card-body">
-          <div class="card-label">Star / Sparkle</div>
-          <div class="card-desc">For: Reviews, Specials, or New Arrivals</div>
-        </div>
-      </div>
+
     </div>
   </div>
 
   <div class="divider"><hr></div>
 
-  <!-- Section 6: Brand Colors -->
+  <!-- Section 5: Color Palette -->
   <div class="section">
-    <div class="section-number">04 — Brand Identity</div>
+    <div class="section-number">05 &mdash; Brand Identity</div>
     <h2 class="section-title">Color <span>Palette</span></h2>
-    <p class="section-desc">The colors used across all designs. Consistent palette = professional, cohesive brand.</p>
+    <p class="section-desc">Your current brand colors. These tie everything together &mdash; website, social, print.</p>
     <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
       <div style="text-align:center;">
         <div style="width:80px; height:80px; border-radius:12px; background:#A911CF; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
@@ -524,44 +1014,79 @@
       </div>
     </div>
     <div class="intro" style="margin:0; max-width:100%;">
-      <h3>Fonts Used</h3>
+      <h3>Fonts</h3>
       <p>
-        <strong>Display / Headings:</strong> Josefin Sans — elegant, modern, great for uppercase titles<br>
-        <strong>Body / Description:</strong> Inter — clean, readable, professional<br>
-        <strong>Script / Taglines:</strong> Cursive/script — adds personality and warmth
+        <strong>Display / Headings:</strong> Josefin Sans &mdash; elegant, modern, great for uppercase titles<br>
+        <strong>Body / Description:</strong> Inter &mdash; clean, readable, professional<br>
+        <strong>Script / Taglines:</strong> Cursive/script &mdash; adds personality and warmth
       </p>
     </div>
   </div>
 
   <div class="divider"><hr></div>
 
-  <!-- What's Next -->
+  <!-- Section 6: Website Feature Ideas -->
   <div class="section">
-    <div class="section-number">Next Steps</div>
-    <h2 class="section-title">What <span>Now</span>?</h2>
-    <div class="intro" style="margin:0; max-width:100%;">
-      <h3>Your Brand is Live</h3>
-      <p>
-        Here's what's done and what's next:<br><br>
-        1. <strong>Website logo</strong> — Updated to your chosen horizontal logo<br>
-        2. <strong>IG Highlight icons</strong> — Regenerated with darker, bolder outlines — ready to upload<br>
-        3. <strong>Color palette &amp; fonts</strong> — Locked in and consistent across the site<br><br>
-        Want to tweak anything? Just use the form below and we'll refine it.
-      </p>
+    <div class="section-number">06 &mdash; Website Features</div>
+    <h2 class="section-title">Feature <span>Ideas</span></h2>
+    <p class="section-desc">Things we could add to your website to level it up. Pick any that interest you and we'll build them out.</p>
+    <div class="feature-list">
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(169,17,207,0.1);">&#x1f4f8;</div>
+        <div>
+          <h4>Before & After Gallery</h4>
+          <p>Side-by-side slider showing transformations. Super engaging and shows your skill instantly.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(92,225,230,0.1);">&#x2b50;</div>
+        <div>
+          <h4>Client Testimonials</h4>
+          <p>Scrolling quotes from happy clients. Social proof builds trust and convinces new bookings.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(193,255,114,0.15);">&#x1f4c5;</div>
+        <div>
+          <h4>Inline Booking Widget</h4>
+          <p>Book directly from the site without leaving the page. One less click = more appointments.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(232,213,245,0.5);">&#x1f4dd;</div>
+        <div>
+          <h4>Services Price List</h4>
+          <p>Clean, organized pricing so clients know what to expect before they reach out. Transparency builds confidence.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(169,17,207,0.1);">&#x1f3ac;</div>
+        <div>
+          <h4>Video Background Hero</h4>
+          <p>Replace the static hero with a short looping video of you working. Brings the page to life immediately.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon" style="background: rgba(92,225,230,0.1);">&#x1f4f1;</div>
+        <div>
+          <h4>Live Instagram Feed</h4>
+          <p>Pull your latest IG posts directly into the website. Keeps things fresh without extra work.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="divider"><hr></div>
 
-  <!-- Section: Feedback Form -->
+  <!-- Feedback Form -->
   <div class="section">
     <div class="section-number">Feedback</div>
     <h2 class="section-title">Send <span>Feedback</span></h2>
-    <p class="section-desc">Love something? Want changes? Drop your thoughts below — we'll follow up on everything.</p>
+    <p class="section-desc">Love something? Want to go a different direction? Drop your thoughts below.</p>
 
     <div class="feedback-form-card">
-      <h3>Your Feedback</h3>
-      <p class="form-subtitle">Submit as many times as you want — each submission goes straight to our inbox.</p>
+      <h3>Your Thoughts</h3>
+      <p class="form-subtitle">Submit as many times as you want &mdash; each submission goes straight to our inbox.</p>
 
       <form id="feedbackForm" action="https://formspree.io/f/xgolgokj" method="POST">
         <div class="form-group">
@@ -570,21 +1095,23 @@
         </div>
 
         <div class="form-group">
-          <label for="fb-section">Section</label>
+          <label for="fb-section">Topic</label>
           <select id="fb-section" name="section" required>
-            <option value="">Pick a section...</option>
-            <option value="General">General / Overall Vibe</option>
-            <option value="Logo">Logo (Section 01-02)</option>
-            <option value="IG Highlights">IG Highlight Icons (Section 03)</option>
-            <option value="Colors">Color Palette (Section 04)</option>
-            <option value="Website">Website Design</option>
+            <option value="">Pick a topic...</option>
+            <option value="General">General / Overall Direction</option>
+            <option value="Homepage Layout">Homepage Layout (Section 02)</option>
+            <option value="Photo Direction">Photo Direction (Section 03)</option>
+            <option value="Instagram Grid">Instagram Aesthetic (Section 04)</option>
+            <option value="Colors & Fonts">Colors & Fonts (Section 05)</option>
+            <option value="Website Features">Website Features (Section 06)</option>
+            <option value="Logo">Logo</option>
             <option value="Other">Other</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="fb-message">Feedback</label>
-          <textarea id="fb-message" name="message" placeholder="What do you love? What should change? Be as specific as you want..." required></textarea>
+          <textarea id="fb-message" name="message" placeholder="What do you like? What direction do you want to go? Be as specific as you want..." required></textarea>
         </div>
 
         <button type="submit" class="submit-btn" id="submitBtn">Send Feedback</button>
@@ -595,7 +1122,7 @@
   </div>
 
   <div class="review-footer">
-    <p>Branding suite designed for Miss Messy Bun — March 2026</p>
+    <p>Style guide for Miss Messy Bun &mdash; March 2026</p>
     <p>Powered by <a href="https://cardflowlabs.com">CardFlow Labs</a></p>
   </div>
 
