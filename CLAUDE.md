@@ -23,6 +23,13 @@ Static website for **Miss Messy Bun** — Sophie Alarcon's holistic hair care bu
 - **Salon Phone**: (831) 477-8080
 - **Direct Phone**: (831) 218-5617
 
+## PRIVACY & SAFETY (CRITICAL)
+- **NEVER put Sophie's personal phone number on the website, social media, or any public-facing content**
+- Contact must be gated through Glambook (requires account) or Instagram DMs
+- Phone number is only shared after a client has booked an appointment
+- The salon's public number (Stranded Beauty Bar) is OK to list since it's already public
+- This is a safety matter — do not override this rule for any reason
+
 ## Online Presence
 - **Instagram**: [@officialmissmessybun](https://instagram.com/officialmissmessybun)
 - **Booking**: [Glambook](https://glambk.com/MissMessyBun)
