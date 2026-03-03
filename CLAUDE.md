@@ -58,6 +58,15 @@ Static website for **Miss Messy Bun** — Sophie Alarcon's holistic hair care bu
 └── CNAME               # Custom domain for GitHub Pages
 ```
 
+## Design Decision (March 2026)
+Sophie picked **Style #3 (Bold & Modern)** as her favorite, with **Style #6 (Holographic Maximalism)** as secondary influence. She said: "I'm feeling more the bold and modern style."
+
+**Style #3 traits**: Black background, strong uppercase typography (Josefin Sans), editorial feel, side-by-side layout (text left, image right), teal outline button, gradient text accent using all 3 brand colors, desaturated portfolio images, fashion-forward/confident/powerful.
+
+**Style #6 traits**: Spinning conic gradient background, all 3 brand colors animated, holographic text animation, bold font, high-energy, Gen-Z friendly.
+
+**Direction**: Merge these — Bold & Modern as the foundation with holographic animated accents from #6. Think: fashion editorial meets neon energy.
+
 ## Roadmap
 1. ~~Create repo~~ ✅
 2. Build landing page (services, about, booking, contact)
