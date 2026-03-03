@@ -890,11 +890,14 @@
       formStatus.style.display = 'none';
 
       var data = new FormData(form);
-      // Replace file input with our curated file list
+      // Formspree free tier doesn't support file uploads — strip files
+      // and add filenames as text so we know images were intended
       data.delete('attachment');
-      selectedFiles.forEach(function(file) {
-        data.append('attachment', file, file.name);
-      });
+      if (selectedFiles.length > 0) {
+        var names = selectedFiles.map(function(f) { return f.name + ' (' + (f.size / 1024).toFixed(0) + ' KB)'; });
+        data.append('images_attached', names.join(', '));
+        data.append('image_note', 'Sophie attached ' + selectedFiles.length + ' image(s). Ask her to text/DM them.');
+      }
 
       fetch(action, {
         method: 'POST',
@@ -902,7 +905,10 @@
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
         if (res.ok) {
-          showStatus('success', '\u2705 Feedback sent! We got it and will follow up soon.');
+          var hadImages = selectedFiles.length > 0;
+          var msg = '\u2705 Feedback sent! We got it and will follow up soon.';
+          if (hadImages) msg += ' We noted your images \u2014 text or DM them to us so we can see them!';
+          showStatus('success', msg);
           form.reset();
           document.getElementById('fb-name').value = 'Sophie';
           selectedFiles = [];
