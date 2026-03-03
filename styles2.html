@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Styles — Miss Messy Bun Website Options (Page 2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600;700&family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --purple: #A911CF; --teal: #5CE1E6; --lime: #C1FF72; }
+    body { font-family: 'Inter', sans-serif; background: #0d0d1a; color: #e8e8e8; line-height: 1.6; }
+
+    .picker-banner {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .picker-banner h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: white; margin-bottom: 0.3rem; }
+    .picker-banner p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    .picker-nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.8rem; }
+    .picker-nav a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.3rem 1rem; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); }
+    .picker-nav a.active { background: rgba(255,255,255,0.2); }
+    .picker-nav a:hover { background: rgba(255,255,255,0.15); }
+
+    .styles-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .style-preview { margin-bottom: 3rem; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); }
+    .style-preview-header { padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .style-label { display: inline-block; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; background: rgba(169,17,207,0.2); color: var(--teal); border: 1px solid rgba(92,225,230,0.2); }
+    .style-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .style-desc { font-size: 0.9rem; color: #a0a0b8; margin-bottom: 0; }
+    .style-preview-body { overflow: hidden; }
+
+    /* === STYLE 9: Split Screen Reveal === */
+    .s9 {
+      display: flex;
+      min-height: 420px;
+    }
+    .s9-left {
+      flex: 1;
+      background: linear-gradient(180deg, #1c0030 0%, #0a1a2a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+    }
+    .s9-left h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .s9-left h2 span { color: var(--teal); }
+    .s9-left p { color: #8888aa; font-family: 'Poppins', sans-serif; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .s9-btn { display: inline-block; padding: 0.7rem 1.8rem; border-radius: 8px; background: var(--teal); color: #0a0a1a; text-decoration: none; font-weight: 600; font-size: 0.9rem; font-family: 'Poppins', sans-serif; }
+    .s9-right {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+    }
+    .s9-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* === STYLE 10: Magazine Editorial === */
+    .s10-hero {
+      background: #fafafa;
+      padding: 0;
+    }
+    .s10-top {
+      display: flex;
+      align-items: stretch;
+    }
+    .s10-img-col {
+      flex: 1.2;
+      position: relative;
+    }
+    .s10-img-col img { width: 100%; height: 100%; min-height: 350px; object-fit: cover; display: block; }
+    .s10-text-col {
+      flex: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: white;
+    }
+    .s10-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 1rem;
+    }
+    .s10-text-col h2 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: #1a1a1a;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .s10-text-col h2 span { font-style: italic; color: var(--purple); }
+    .s10-text-col p { color: #777; font-family: 'Raleway', sans-serif; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .s10-btn { display: inline-block; padding: 0.7rem 2rem; background: var(--purple); color: white; text-decoration: none; font-family: 'Raleway', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; }
+
+    /* === STYLE 11: Neon Outline === */
+    .s11 {
+      background: #0a0a0a;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s11 h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .s11 h2 span {
+      -webkit-text-stroke: 2px var(--purple);
+    }
+    .s11 p {
+      color: #555;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+    .s11-btns { display: flex; gap: 1rem; justify-content: center; }
+    .s11-btn {
+      padding: 0.7rem 1.8rem;
+      border-radius: 0;
+      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .s11-btn-primary { background: var(--teal); color: #0a0a0a; }
+    .s11-btn-outline { background: transparent; color: var(--teal); border: 1px solid var(--teal); }
+    .s11-strip {
+      display: flex;
+      gap: 0;
+      margin-top: 2rem;
+    }
+    .s11-strip img { flex: 1; height: 120px; object-fit: cover; filter: grayscale(0.5) contrast(1.2); }
+
+    /* === STYLE 12: Stacked Cards === */
+    .s12 { background: #f0ecf5; padding: 3rem 2rem; }
+    .s12-header { text-align: center; margin-bottom: 2rem; }
+    .s12-header h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.8rem;
+      color: #2a1040;
+      font-weight: 700;
+    }
+    .s12-header p { color: #7a6090; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; }
+    .s12-stack {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .s12-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 2px 12px rgba(42,16,64,0.06);
+    }
+    .s12-item img { width: 80px; height: 80px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+    .s12-item-text h4 { font-family: 'Quicksand', sans-serif; font-size: 1rem; color: #2a1040; font-weight: 700; }
+    .s12-item-text p { font-family: 'Quicksand', sans-serif; font-size: 0.8rem; color: #8a70a0; }
+    .s12-cta {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      padding: 0.8rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: white;
+      text-decoration: none;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* === STYLE 13: Full Bleed Photo Hero === */
+    .s13 { position: relative; min-height: 400px; overflow: hidden; }
+    .s13-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/ig-post-2025wrap.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.3);
+    }
+    .s13-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 400px;
+      padding: 3rem;
+    }
+    .s13-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--purple);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .s13 h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      max-width: 500px;
+    }
+    .s13 p {
+      color: rgba(255,255,255,0.7);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+    .s13-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: white;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 50px;
+      width: fit-content;
+    }
+
+    /* === STYLE 14: Horizontal Scroll Showcase === */
+    .s14-hero {
+      background: linear-gradient(180deg, #12001f 0%, #0a0a1a 100%);
+      padding: 3rem 2rem 0;
+      text-align: center;
+    }
+    .s14-hero h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: white;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .s14-hero h2 span { color: var(--lime); }
+    .s14-hero p { color: #7a7a9a; font-family: 'Poppins', sans-serif; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .s14-scroll {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 0 2rem 2rem;
+      background: linear-gradient(180deg, #0a0a1a 0%, #12001f 100%);
+      scrollbar-width: none;
+    }
+    .s14-scroll::-webkit-scrollbar { display: none; }
+    .s14-card {
+      min-width: 220px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+    .s14-card img { width: 100%; height: 200px; object-fit: cover; }
+    .s14-card-body { padding: 1rem; }
+    .s14-card h4 { color: white; font-family: 'Poppins', sans-serif; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .s14-card p { color: #666688; font-size: 0.8rem; }
+    .s14-card .s14-tag { display: inline-block; margin-top: 0.5rem; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; background: rgba(193,255,114,0.15); color: var(--lime); }
+
+    /* === STYLE 15: Centered Portrait === */
+    .s15 {
+      background: linear-gradient(180deg, #1a0030 0%, #0f0f2a 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .s15-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--teal);
+      margin: 0 auto 1.5rem;
+      display: block;
+      box-shadow: 0 0 30px rgba(92,225,230,0.2);
+    }
+    .s15 h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: white;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .s15 h2 span {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+    .s15-subtitle {
+      color: #8888aa;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .s15-links { display: flex; flex-direction: column; gap: 0.8rem; max-width: 340px; margin: 0 auto; }
+    .s15-link {
+      display: block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .s15-link:hover { border-color: var(--teal); background: rgba(92,225,230,0.08); }
+
+    /* === STYLE 16: Brutalist === */
+    .s16 { background: #e8e0f0; padding: 0; }
+    .s16-top {
+      background: var(--purple);
+      padding: 2.5rem 2rem;
+    }
+    .s16-top h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--lime);
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin-bottom: 0.5rem;
+    }
+    .s16-top p {
+      color: rgba(255,255,255,0.7);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+    }
+    .s16-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+    .s16-cell {
+      padding: 1.5rem;
+      border: 2px solid var(--purple);
+    }
+    .s16-cell h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .s16-cell p { font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; color: #6a5080; }
+    .s16-btn-row { padding: 1.5rem 2rem; background: var(--purple); }
+    .s16-btn { display: inline-block; padding: 0.7rem 2rem; background: var(--lime); color: #1a0030; text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+
+    /* === STYLE 17: Storybook / Scroll Narrative === */
+    .s17 { background: #faf8f5; }
+    .s17-chapter { display: flex; align-items: stretch; min-height: 200px; }
+    .s17-chapter:nth-child(even) { flex-direction: row-reverse; }
+    .s17-chapter-img { flex: 1; }
+    .s17-chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 200px; }
+    .s17-chapter-text {
+      flex: 1;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .s17-chapter-text .s17-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: rgba(169,17,207,0.15);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .s17-chapter-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: #2a1a30;
+      margin-bottom: 0.5rem;
+    }
+    .s17-chapter-text p { color: #8a7a90; font-size: 0.9rem; line-height: 1.7; }
+
+    /* === STYLE 18: Mosaic Gallery === */
+    .s18-hero {
+      background: #0d0d1a;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .s18-hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: white;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .s18-hero h2 span { font-weight: 700; color: var(--teal); }
+    .s18-hero p { color: #555570; font-size: 0.85rem; }
+    .s18-mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 200px 150px;
+      gap: 3px;
+      background: #0d0d1a;
+    }
+    .s18-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .s18-mosaic img:first-child { grid-column: span 2; }
+    .s18-mosaic img:nth-child(4) { grid-column: span 2; }
+    .s18-bar {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .s18-bar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .s9 { flex-direction: column; }
+      .s10-top { flex-direction: column; }
+      .s10-img-col img { min-height: 250px; }
+      .s11-strip { flex-wrap: wrap; }
+      .s11-strip img { flex: 1 1 30%; height: 100px; }
+      .s13 h2 { font-size: 1.8rem; }
+      .s16-grid { grid-template-columns: 1fr; }
+      .s17-chapter, .s17-chapter:nth-child(even) { flex-direction: column; }
+      .s18-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .s18-mosaic img:first-child, .s18-mosaic img:nth-child(4) { grid-column: span 1; }
+      .picker-banner h1 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="picker-banner">
+    <h1>Pick Your Vibe</h1>
+    <p>More styles! Same colors, different layouts and feels.</p>
+    <div class="picker-nav">
+      <a href="styles.html">Styles 1-8</a>
+      <a href="styles2.html" class="active">Styles 9-18</a>
+      <a href="index.html">Current Site</a>
+    </div>
+  </div>
+
+  <div class="styles-container">
+
+    <!-- STYLE 9 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 9</span>
+        <div class="style-name">Split Screen</div>
+        <div class="style-desc">Text on one side, photo grid on the other. Strong first impression, portfolio-forward. Works great on desktop and stacks nicely on mobile.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s9">
+          <div class="s9-left">
+            <h2>Your Crown.<br><span>Nurtured.</span></h2>
+            <p>Holistic loctician and natural stylist in Santa Cruz, CA. Plant-based care meets protective artistry.</p>
+            <a href="#" class="s9-btn">Book Appointment</a>
+          </div>
+          <div class="s9-right">
+            <img src="images/ig-post-saltpepper.jpg" alt="">
+            <img src="images/ig-post-starterlocs.jpg" alt="">
+            <img src="images/ig-post-cutting.jpg" alt="">
+            <img src="images/ig-post-portfolio.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 10 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 10</span>
+        <div class="style-name">Magazine Editorial</div>
+        <div class="style-desc">Large photo next to elegant text. High-end salon magazine feel. Sophisticated serif fonts with your purple accent. Very "Vogue meets wellness."</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s10-hero">
+          <div class="s10-top">
+            <div class="s10-img-col">
+              <img src="images/ig-post-starterlocs.jpg" alt="Starter locs">
+            </div>
+            <div class="s10-text-col">
+              <div class="s10-eyebrow">Santa Cruz, California</div>
+              <h2>Nurturing Crowns with <span>Intention</span></h2>
+              <p>Holistic loctician and natural stylist specializing in plant-based care and protective artistry. Your hair journey, honored with every strand.</p>
+              <a href="#" class="s10-btn">BOOK AN APPOINTMENT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 11 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 11</span>
+        <div class="style-name">Neon Outline</div>
+        <div class="style-desc">Outlined text, dark background, sharp edges. Streetwear meets salon. Bold, edgy, stands out from every other hair stylist site.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s11">
+          <h2>Miss <span>Messy</span> Bun</h2>
+          <p>Holistic loctician. Natural stylist. Protective artistry in Santa Cruz.</p>
+          <div class="s11-btns">
+            <a href="#" class="s11-btn s11-btn-primary">Book Now</a>
+            <a href="#" class="s11-btn s11-btn-outline">See Work</a>
+          </div>
+        </div>
+        <div class="s11-strip">
+          <img src="images/ig-post-saltpepper.jpg" alt="">
+          <img src="images/ig-post-2025wrap.jpg" alt="">
+          <img src="images/ig-post-welcome.jpg" alt="">
+          <img src="images/ig-post-newservices.jpg" alt="">
+          <img src="images/ig-post-portfolio.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 12 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 12</span>
+        <div class="style-name">Stacked Service List</div>
+        <div class="style-desc">Mobile-first card stack. Each service is a row with photo + text. Super easy to navigate on phone. Clean, app-like feel. Great for booking conversion.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s12">
+          <div class="s12-header">
+            <h2>Book a Service</h2>
+            <p>Tap to learn more and reserve your spot</p>
+          </div>
+          <div class="s12-stack">
+            <div class="s12-item">
+              <img src="images/ig-post-starterlocs.jpg" alt="">
+              <div class="s12-item-text"><h4>Starter Locs</h4><p>Begin your loc journey with gentle, natural methods</p></div>
+            </div>
+            <div class="s12-item">
+              <img src="images/ig-post-saltpepper.jpg" alt="">
+              <div class="s12-item-text"><h4>Loc Extensions</h4><p>Add length & volume with sustainable options</p></div>
+            </div>
+            <div class="s12-item">
+              <img src="images/ig-post-cutting.jpg" alt="">
+              <div class="s12-item-text"><h4>Precision Cuts</h4><p>Clean lines, intentional shape, healthy hair first</p></div>
+            </div>
+            <div class="s12-item">
+              <img src="images/ig-post-portfolio.jpg" alt="">
+              <div class="s12-item-text"><h4>Protective Styles</h4><p>Beautiful braids & twists that nurture your crown</p></div>
+            </div>
+          </div>
+          <a href="#" class="s12-cta">Book Your Appointment</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 13 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 13</span>
+        <div class="style-name">Full Bleed Photo Hero</div>
+        <div class="style-desc">Giant background image with text overlay at the bottom. Dramatic, cinematic, photo-first. The work speaks before any words do. Very Instagram-native.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s13">
+          <div class="s13-bg"></div>
+          <div class="s13-content">
+            <div class="s13-badge">Holistic Hair Care</div>
+            <h2>Miss Messy Bun</h2>
+            <p>Nurturing crowns with intention, plant-based care, and protective artistry. Santa Cruz, CA.</p>
+            <a href="#" class="s13-btn">Book an Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 14 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 14</span>
+        <div class="style-name">Horizontal Card Scroll</div>
+        <div class="style-desc">Swipeable service cards under a clean header. Very app-like, perfect for mobile users. Lime green tags pop against the dark. TikTok generation friendly.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s14-hero">
+          <h2>Services by <span>Miss Messy Bun</span></h2>
+          <p>Swipe to explore what we offer</p>
+        </div>
+        <div class="s14-scroll">
+          <div class="s14-card">
+            <img src="images/ig-post-starterlocs.jpg" alt="">
+            <div class="s14-card-body"><h4>Starter Locs</h4><p>Begin your journey</p><span class="s14-tag">Popular</span></div>
+          </div>
+          <div class="s14-card">
+            <img src="images/ig-post-saltpepper.jpg" alt="">
+            <div class="s14-card-body"><h4>Loc Extensions</h4><p>Add length & volume</p><span class="s14-tag">Sustainable</span></div>
+          </div>
+          <div class="s14-card">
+            <img src="images/ig-post-cutting.jpg" alt="">
+            <div class="s14-card-body"><h4>Precision Cuts</h4><p>Clean lines, healthy hair</p><span class="s14-tag">New</span></div>
+          </div>
+          <div class="s14-card">
+            <img src="images/ig-post-welcome.jpg" alt="">
+            <div class="s14-card-body"><h4>Maintenance</h4><p>Keep locs thriving</p><span class="s14-tag">Essential</span></div>
+          </div>
+          <div class="s14-card">
+            <img src="images/ig-post-portfolio.jpg" alt="">
+            <div class="s14-card-body"><h4>Protective Styles</h4><p>Braids & twists</p><span class="s14-tag">Artistry</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 15 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 15</span>
+        <div class="style-name">Link-in-Bio Style</div>
+        <div class="style-desc">Profile photo on top, stacked action links below. Replaces Linktree entirely. Clean, focused, drives people exactly where you want. Great as a landing page.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s15">
+          <img src="images/profile-avatar.jpg" alt="Miss Messy Bun" class="s15-avatar">
+          <h2><span>Miss Messy Bun</span></h2>
+          <div class="s15-subtitle">Holistic Loctician & Natural Stylist</div>
+          <div class="s15-links">
+            <a href="#" class="s15-link">Book an Appointment</a>
+            <a href="#" class="s15-link">Shop Crown Care Products</a>
+            <a href="#" class="s15-link">Shop Rebundle Extensions</a>
+            <a href="#" class="s15-link">Follow on Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 16 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 16</span>
+        <div class="style-name">Brutalist</div>
+        <div class="style-desc">Raw, bold, unapologetic. Thick borders, loud colors, oversized type. Stands out from every "pretty" salon site. Very Y2K/zine aesthetic.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s16">
+          <div class="s16-top">
+            <h2>Miss<br>Messy<br>Bun</h2>
+            <p>Holistic Loctician. Santa Cruz, CA.</p>
+          </div>
+          <div class="s16-grid">
+            <div class="s16-cell"><h4>Locs</h4><p>Installation, maintenance, extensions</p></div>
+            <div class="s16-cell"><h4>Braids</h4><p>Protective styles, twists, fishbone</p></div>
+            <div class="s16-cell"><h4>Cuts</h4><p>Precision cuts, blowouts, updos</p></div>
+          </div>
+          <div class="s16-btn-row">
+            <a href="#" class="s16-btn">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 17 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 17</span>
+        <div class="style-name">Storybook Scroll</div>
+        <div class="style-desc">Alternating photo-text sections that tell a story as you scroll. Each section is a "chapter" of her brand. Great for building emotional connection.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s17">
+          <div class="s17-chapter">
+            <div class="s17-chapter-img"><img src="images/ig-post-starterlocs.jpg" alt=""></div>
+            <div class="s17-chapter-text">
+              <div class="s17-num">01</div>
+              <h3>Every Crown Tells a Story</h3>
+              <p>As a holistic loctician, I believe in nurturing your hair from root to tip with plant-based products that honor your natural beauty.</p>
+            </div>
+          </div>
+          <div class="s17-chapter">
+            <div class="s17-chapter-img"><img src="images/ig-post-saltpepper.jpg" alt=""></div>
+            <div class="s17-chapter-text">
+              <div class="s17-num">02</div>
+              <h3>Protective Artistry</h3>
+              <p>Beautiful styles that protect. From loc extensions to braids, every style is crafted with intention and sustainable materials.</p>
+            </div>
+          </div>
+          <div class="s17-chapter">
+            <div class="s17-chapter-img"><img src="images/ig-post-cutting.jpg" alt=""></div>
+            <div class="s17-chapter-text">
+              <div class="s17-num">03</div>
+              <h3>Growing Together</h3>
+              <p>Now offering precision cuts, blowouts, and formal updos. Your crown deserves care from someone who loves the journey as much as the destination.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLE 18 -->
+    <div class="style-preview">
+      <div class="style-preview-header">
+        <span class="style-label">Style 18</span>
+        <div class="style-name">Mosaic Gallery</div>
+        <div class="style-desc">Asymmetric photo grid with thin letterhead branding on top. Portfolio-first, minimal text. Let the work do all the talking. Clean gallery aesthetic.</div>
+      </div>
+      <div class="style-preview-body">
+        <div class="s18-hero">
+          <h2>Miss <span>Messy</span> Bun</h2>
+          <p>Holistic Loctician &bull; Natural Stylist &bull; Santa Cruz</p>
+        </div>
+        <div class="s18-mosaic">
+          <img src="images/ig-post-2025wrap.jpg" alt="">
+          <img src="images/ig-post-starterlocs.jpg" alt="">
+          <img src="images/ig-post-cutting.jpg" alt="">
+          <img src="images/ig-post-saltpepper.jpg" alt="">
+          <img src="images/ig-post-portfolio.jpg" alt="">
+          <img src="images/ig-post-welcome.jpg" alt="">
+        </div>
+        <div class="s18-bar">
+          <a href="#">Book Your Appointment &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
