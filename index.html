@@ -13,6 +13,9 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23A911CF'/><stop offset='50%25' stop-color='%235CE1E6'/><stop offset='100%25' stop-color='%23C1FF72'/></linearGradient></defs><text y='.9em' font-size='90' font-family='serif' fill='url(%23g)'>M</text></svg>">
+
   <!-- Fonts: Josefin Sans (display) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -45,16 +51,16 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <div class="hero-text">
-        <span class="hero-badge">Santa Cruz, CA</span>
-        <h1>
+        <span class="hero-badge hero-stagger">Santa Cruz, CA</span>
+        <h1 class="hero-stagger">
           Your Crown.<br>
           <span class="holo-text line-2">Your Rules.</span>
         </h1>
-        <p class="hero-desc">
+        <p class="hero-desc hero-stagger">
           Holistic loctician and natural stylist specializing in plant-based care
           and protective artistry. Your hair deserves intentional, nurturing hands.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions hero-stagger">
           <a href="https://glambk.com/MissMessyBun" target="_blank" rel="noopener" class="btn btn-primary">
             Book Now
           </a>
@@ -355,6 +361,27 @@
       <span>Santa Cruz, CA</span>
     </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-next" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-counter"></div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Grain Texture Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
 
   <script src="js/main.js"></script>
 </body>
