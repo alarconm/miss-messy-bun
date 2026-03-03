@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Messy Bun — Branding Suite Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple: #A911CF;
+      --teal: #5CE1E6;
+      --lavender: #E8D5F5;
+      --dark: #1a1a2e;
+      --surface: #f8f6fb;
+      --card: #ffffff;
+      --text: #2d2d3f;
+      --text-muted: #6b6b80;
+      --border: #e8e5f0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a3a4e 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .header h1 span {
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .header .date {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.3rem 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Intro note */
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      border-left: 4px solid var(--teal);
+    }
+
+    .intro h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .section-title span {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .section-number {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Cards grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card-grid.small {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(169, 17, 207, 0.08);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: #fafafa;
+      padding: 1rem;
+    }
+
+    .card-img.dark-bg {
+      background: #1a1a2e;
+    }
+
+    .card-img.cover {
+      object-fit: cover;
+      padding: 0;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .card-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 20px;
+    }
+
+    .tag-icon { background: rgba(169, 17, 207, 0.1); color: var(--purple); }
+    .tag-logo { background: rgba(92, 225, 230, 0.1); color: #0a9a9e; }
+    .tag-social { background: rgba(193, 255, 114, 0.15); color: #5a8a00; }
+    .tag-print { background: rgba(169, 17, 207, 0.08); color: #8a5ab0; }
+
+    /* Existing logos comparison */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 800px;
+    }
+
+    .comparison .card-img {
+      background: white;
+    }
+
+    /* Divider */
+    .divider {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .divider hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* Footer */
+    .review-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .review-footer a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header { padding: 2rem 1.5rem; }
+      .section { padding: 0 1rem; }
+      .card-grid { grid-template-columns: 1fr; }
+      .card-grid.small { grid-template-columns: repeat(2, 1fr); }
+      .comparison { grid-template-columns: 1fr; }
+      .intro { margin: 1.5rem 1rem; padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .card-grid.small { grid-template-columns: 1fr 1fr; }
+      .header h1 { letter-spacing: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Miss Messy Bun <span>Branding Suite</span></h1>
+    <p>Logo concepts, icons, social graphics, and print materials for your review</p>
+    <span class="date">March 2026</span>
+  </div>
+
+  <div class="intro">
+    <h3>Hey Sophie!</h3>
+    <p>
+      We put together a full branding suite for you to look through. Everything here is a concept for you to
+      react to — pick what you love, tell us what to change, mix and match elements. Nothing is final until you say so.
+      We can refine any of these, combine elements from different options, or go in a completely new direction.
+      The goal is to give you options so you can finally settle on the brand identity you love.
+    </p>
+  </div>
+
+  <!-- Section 1: Your Current Logos -->
+  <div class="section">
+    <div class="section-number">01 — Starting Point</div>
+    <h2 class="section-title">Your <span>Current Logos</span></h2>
+    <p class="section-desc">These are the two versions you sent us. The main question: "Braids. Locs. Protective Styles." vs "Hairstyling Naturally." — you said you prefer "Hairstyling Naturally" since you offer expanded services now.</p>
+    <div class="comparison">
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-original-braids.png" alt="Original logo - Braids Locs Protective Styles">
+        <div class="card-body">
+          <div class="card-label">Version A — Original</div>
+          <div class="card-desc">"Braids. Locs. Protective Styles." — more specific but limits your brand</div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-original-hairstyling.png" alt="Original logo - Hairstyling Naturally">
+        <div class="card-body">
+          <div class="card-label">Version B — Updated</div>
+          <div class="card-desc">"Hairstyling Naturally." — broader, covers all your expanded services</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 2: Logo Icon Marks -->
+  <div class="section">
+    <div class="section-number">02 — Icon Marks</div>
+    <h2 class="section-title">Logo <span>Icons</span></h2>
+    <p class="section-desc">Standalone icons that work as favicons, app icons, social media profile pictures, or stickers. These pair with any text treatment below.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-icon-lavender.png" alt="Lavender circle icon - front facing">
+        <div class="card-body">
+          <div class="card-label">Lavender Circle — Front</div>
+          <div class="card-desc">Clean front-facing silhouette with starry bun. Soft lavender circle. Works on light backgrounds.</div>
+          <span class="card-tag tag-icon">Icon / Favicon / Profile Pic</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img dark-bg" src="images/branding/mmb-icon-dark.png" alt="Dark mode icon - purple to teal gradient">
+        <div class="card-body">
+          <div class="card-label">Dark Mode — Profile</div>
+          <div class="card-desc">White line art side profile on purple-to-teal gradient. Premium feel. Perfect for dark backgrounds and IG profile.</div>
+          <span class="card-tag tag-icon">Icon / Dark Mode / Premium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 3: Full Logos -->
+  <div class="section">
+    <div class="section-number">03 — Full Logos</div>
+    <h2 class="section-title">Logo <span>Concepts</span></h2>
+    <p class="section-desc">Complete logo designs with text. Each has a different vibe — from elegant serif to bold modern. Pick what feels most "you."</p>
+    <div class="card-grid">
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-logo-typography.png" alt="Typography logo - elegant serif gradient">
+        <div class="card-body">
+          <div class="card-label">Elegant Serif</div>
+          <div class="card-desc">Pure typography, no icon. Stacked name with purple-to-teal gradient. Luxury fashion vibe — think Chanel meets holistic beauty.</div>
+          <span class="card-tag tag-logo">Primary Logo / Website / Print</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-logo-combined.png" alt="Combined logo - icon plus text">
+        <div class="card-body">
+          <div class="card-label">Icon + Text — Horizontal</div>
+          <div class="card-desc">Side-profile silhouette in lavender circle paired with stacked text and "Hairstyling Naturally." script. Versatile for any use.</div>
+          <span class="card-tag tag-logo">Primary Logo / Most Versatile</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-logo-bold.png" alt="Bold MMB logo with crown">
+        <div class="card-body">
+          <div class="card-label">Bold MMB — Crown</div>
+          <div class="card-desc">Bold condensed "MMB" with a crown cutout in the center M. Teal dot accent. Modern, confident, memorable. Streetwear meets salon.</div>
+          <span class="card-tag tag-logo">Primary Logo / Bold / Statement</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-monogram.png" alt="MMB monogram - luxury intertwined letters">
+        <div class="card-body">
+          <div class="card-label">Luxury Monogram</div>
+          <div class="card-desc">Intertwined MMB letters in a fashion-house style. Purple and teal. High-end, editorial. Great for embossing, stamps, or watermarks.</div>
+          <span class="card-tag tag-logo">Monogram / Luxury / Stamp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 4: Social & Marketing -->
+  <div class="section">
+    <div class="section-number">04 — Social Media & Marketing</div>
+    <h2 class="section-title">Social <span>Graphics</span></h2>
+    <p class="section-desc">Ready-to-use graphics for your social media profiles, banners, and marketing materials.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img class="card-img cover" src="images/branding/mmb-social-banner.png" alt="Social media banner">
+        <div class="card-body">
+          <div class="card-label">Social Media Banner</div>
+          <div class="card-desc">Lavender gradient with botanical accents. "Luxury Care for Your Crown" tagline. Works for Facebook cover, Instagram banner, or website hero.</div>
+          <span class="card-tag tag-social">Facebook / IG / Website</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img cover" src="images/branding/mmb-business-card.png" alt="Business card mockup">
+        <div class="card-body">
+          <div class="card-label">Business Card</div>
+          <div class="card-desc">Premium card with all your info — logo, title, tagline, location, Instagram handle, and Glambook link. Ready to print.</div>
+          <span class="card-tag tag-print">Print / Hand Out / Networking</span>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-watermark.png" alt="Photo watermark">
+        <div class="card-body">
+          <div class="card-label">Photo Watermark</div>
+          <div class="card-desc">Subtle "Miss Messy Bun" script with tiny crown. Overlay on your work photos to protect and brand them. Light and non-distracting.</div>
+          <span class="card-tag tag-social">Portfolio / Instagram / Protection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 5: IG Highlight Icons -->
+  <div class="section">
+    <div class="section-number">05 — Instagram Highlights</div>
+    <h2 class="section-title">IG Highlight <span>Icons</span></h2>
+    <p class="section-desc">Matching icons for your Instagram story highlights. Lavender background with teal line art — cohesive and on-brand.</p>
+    <div class="card-grid small">
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-highlight-crown.png" alt="Crown highlight icon">
+        <div class="card-body">
+          <div class="card-label">Crown</div>
+          <div class="card-desc">For: About Me, Brand Story, or VIP</div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-highlight-scissors.png" alt="Scissors highlight icon">
+        <div class="card-body">
+          <div class="card-label">Scissors</div>
+          <div class="card-desc">For: Services, Cuts, or Tutorials</div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-highlight-leaf.png" alt="Monstera leaf highlight icon">
+        <div class="card-body">
+          <div class="card-label">Monstera Leaf</div>
+          <div class="card-desc">For: Products, Holistic Care, or Self-Care</div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="images/branding/mmb-highlight-star.png" alt="Star highlight icon">
+        <div class="card-body">
+          <div class="card-label">Star / Sparkle</div>
+          <div class="card-desc">For: Reviews, Specials, or New Arrivals</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- Section 6: Brand Colors -->
+  <div class="section">
+    <div class="section-number">06 — Brand Identity</div>
+    <h2 class="section-title">Color <span>Palette</span></h2>
+    <p class="section-desc">The colors used across all designs. Consistent palette = professional, cohesive brand.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
+      <div style="text-align:center;">
+        <div style="width:80px; height:80px; border-radius:12px; background:#A911CF; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:1px;">PURPLE</div>
+        <div style="font-size:0.65rem; color:var(--text-muted);">#A911CF</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:80px; height:80px; border-radius:12px; background:#5CE1E6; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:1px;">TEAL</div>
+        <div style="font-size:0.65rem; color:var(--text-muted);">#5CE1E6</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:80px; height:80px; border-radius:12px; background:#E8D5F5; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:1px;">LAVENDER</div>
+        <div style="font-size:0.65rem; color:var(--text-muted);">#E8D5F5</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:80px; height:80px; border-radius:12px; background:#C1FF72; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:1px;">LIME</div>
+        <div style="font-size:0.65rem; color:var(--text-muted);">#C1FF72</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:80px; height:80px; border-radius:12px; background:#1a1a2e; margin-bottom:0.5rem; border:1px solid var(--border);"></div>
+        <div style="font-size:0.7rem; font-weight:600; letter-spacing:1px;">DARK</div>
+        <div style="font-size:0.65rem; color:var(--text-muted);">#1A1A2E</div>
+      </div>
+    </div>
+    <div class="intro" style="margin:0; max-width:100%;">
+      <h3>Fonts Used</h3>
+      <p>
+        <strong>Display / Headings:</strong> Josefin Sans — elegant, modern, great for uppercase titles<br>
+        <strong>Body / Description:</strong> Inter — clean, readable, professional<br>
+        <strong>Script / Taglines:</strong> Cursive/script — adds personality and warmth
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <!-- What's Next -->
+  <div class="section">
+    <div class="section-number">Next Steps</div>
+    <h2 class="section-title">What <span>Now</span>?</h2>
+    <div class="intro" style="margin:0; max-width:100%;">
+      <h3>Tell Us What You Love</h3>
+      <p>
+        Look through everything and let us know:<br><br>
+        1. Which <strong>icon style</strong> do you like? (Lavender front-face, dark mode profile, or your original?)<br>
+        2. Which <strong>logo concept</strong> speaks to you? (Typography, combined, bold MMB, monogram, or your original Mb. style?)<br>
+        3. Do you like the <strong>"Luxury Care for Your Crown"</strong> tagline?<br>
+        4. Want us to <strong>mix elements</strong>? (e.g., "I love the bold MMB font but with the lavender icon")<br>
+        5. Anything you want <strong>changed</strong>? (colors, fonts, style, vibe)<br><br>
+        We can generate as many variations as you need until it's perfect. No rush — your brand deserves to feel right.
+      </p>
+    </div>
+  </div>
+
+  <div class="review-footer">
+    <p>Branding suite designed for Miss Messy Bun — March 2026</p>
+    <p>Powered by <a href="https://cardflowlabs.com">CardFlow Labs</a></p>
+  </div>
+
+</body>
+</html>
