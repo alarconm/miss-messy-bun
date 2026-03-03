@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navLinks.classList.toggle('active');
       toggle.classList.toggle('active', isOpen);
       toggle.setAttribute('aria-expanded', isOpen);
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      // Lock body scroll when menu is open (matches CSS body.menu-open)
+      document.body.classList.toggle('menu-open', isOpen);
     });
 
     // Close menu on link click
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('active');
         toggle.classList.remove('active');
         toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
       });
     });
   }
