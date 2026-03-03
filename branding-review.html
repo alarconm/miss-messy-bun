@@ -257,6 +257,217 @@
       text-decoration: none;
     }
 
+    /* Feedback Form */
+    .feedback-form-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      border-left: 4px solid var(--teal);
+      padding: 2rem;
+    }
+
+    .feedback-form-card h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .feedback-form-card .form-subtitle {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--surface);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(92, 225, 230, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b80' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    /* Drop zone */
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 2rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: var(--surface);
+    }
+
+    .drop-zone:hover,
+    .drop-zone.dragover {
+      border-color: var(--teal);
+      background: rgba(92, 225, 230, 0.04);
+    }
+
+    .drop-zone-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .drop-zone-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .drop-zone-text strong {
+      color: var(--teal);
+    }
+
+    .drop-zone-hint {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      opacity: 0.7;
+    }
+
+    /* Thumbnail previews */
+    .preview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .preview-thumb {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-thumb .remove-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 20px;
+      height: 20px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .file-size-warn {
+      color: #c0392b;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .file-size-warn.visible { display: block; }
+
+    /* Submit button */
+    .submit-btn {
+      display: inline-block;
+      padding: 0.8rem 2.5rem;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* Status messages */
+    .form-status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(92, 225, 230, 0.1);
+      border: 1px solid var(--teal);
+      color: #0a9a9e;
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(169, 17, 207, 0.06);
+      border: 1px solid var(--purple);
+      color: #8a2387;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .header { padding: 2rem 1.5rem; }
@@ -265,11 +476,14 @@
       .card-grid.small { grid-template-columns: repeat(2, 1fr); }
       .comparison { grid-template-columns: 1fr; }
       .intro { margin: 1.5rem 1rem; padding: 1.5rem; }
+      .feedback-form-card { padding: 1.5rem; }
+      .drop-zone { padding: 1.5rem 1rem; }
     }
 
     @media (max-width: 480px) {
       .card-grid.small { grid-template-columns: 1fr 1fr; }
       .header h1 { letter-spacing: 3px; }
+      .preview-thumb { width: 64px; height: 64px; }
     }
   </style>
 </head>
@@ -522,10 +736,188 @@
     </div>
   </div>
 
+  <div class="divider"><hr></div>
+
+  <!-- Section: Feedback Form -->
+  <div class="section">
+    <div class="section-number">Feedback</div>
+    <h2 class="section-title">Send <span>Feedback</span></h2>
+    <p class="section-desc">Love something? Want changes? Drop your thoughts below — you can even attach screenshots or inspiration images.</p>
+
+    <div class="feedback-form-card">
+      <h3>Your Feedback</h3>
+      <p class="form-subtitle">Submit as many times as you want — each submission goes straight to our inbox.</p>
+
+      <form id="feedbackForm" action="FORMSPREE_ENDPOINT" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fb-name">Name</label>
+          <input type="text" id="fb-name" name="name" value="Sophie" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-section">Section</label>
+          <select id="fb-section" name="section" required>
+            <option value="">Pick a section...</option>
+            <option value="General">General / Overall Vibe</option>
+            <option value="Icons">Icons (Section 02)</option>
+            <option value="Logos">Logo Concepts (Section 03)</option>
+            <option value="Social">Social & Marketing (Section 04)</option>
+            <option value="IG Highlights">IG Highlight Icons (Section 05)</option>
+            <option value="Colors">Color Palette (Section 06)</option>
+            <option value="Website">Website Design</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-message">Feedback</label>
+          <textarea id="fb-message" name="message" placeholder="What do you love? What should change? Be as specific as you want..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Images <span style="font-weight:400; text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; color:var(--text-muted);">(optional — screenshots, inspo, etc.)</span></label>
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">📎</div>
+            <div class="drop-zone-text">Drag images here or <strong>tap to browse</strong></div>
+            <div class="drop-zone-hint">PNG, JPG, WEBP — up to 10 MB total</div>
+          </div>
+          <input type="file" id="fb-files" name="attachment" multiple accept="image/*" style="display:none;">
+          <div class="preview-grid" id="previewGrid"></div>
+          <div class="file-size-warn" id="fileSizeWarn">Total file size exceeds 10 MB — please remove some images.</div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Send Feedback</button>
+
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+
   <div class="review-footer">
     <p>Branding suite designed for Miss Messy Bun — March 2026</p>
     <p>Powered by <a href="https://cardflowlabs.com">CardFlow Labs</a></p>
   </div>
+
+  <script>
+  (function() {
+    var form = document.getElementById('feedbackForm');
+    var dropZone = document.getElementById('dropZone');
+    var fileInput = document.getElementById('fb-files');
+    var previewGrid = document.getElementById('previewGrid');
+    var fileSizeWarn = document.getElementById('fileSizeWarn');
+    var submitBtn = document.getElementById('submitBtn');
+    var formStatus = document.getElementById('formStatus');
+
+    var selectedFiles = [];
+
+    // Drop zone click opens file picker
+    dropZone.addEventListener('click', function() { fileInput.click(); });
+
+    // Drag events
+    dropZone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+    dropZone.addEventListener('dragleave', function() {
+      dropZone.classList.remove('dragover');
+    });
+    dropZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      addFiles(e.dataTransfer.files);
+    });
+
+    // File input change
+    fileInput.addEventListener('change', function() {
+      addFiles(fileInput.files);
+      fileInput.value = '';
+    });
+
+    function addFiles(fileList) {
+      for (var i = 0; i < fileList.length; i++) {
+        if (fileList[i].type.startsWith('image/')) {
+          selectedFiles.push(fileList[i]);
+        }
+      }
+      renderPreviews();
+    }
+
+    function renderPreviews() {
+      while (previewGrid.firstChild) previewGrid.removeChild(previewGrid.firstChild);
+      var totalSize = 0;
+      selectedFiles.forEach(function(file, idx) {
+        totalSize += file.size;
+        var thumb = document.createElement('div');
+        thumb.className = 'preview-thumb';
+        var img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.alt = file.name;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'remove-btn';
+        btn.textContent = '\u00d7';
+        btn.addEventListener('click', function() {
+          selectedFiles.splice(idx, 1);
+          renderPreviews();
+        });
+        thumb.appendChild(img);
+        thumb.appendChild(btn);
+        previewGrid.appendChild(thumb);
+      });
+      var overLimit = totalSize > 10 * 1024 * 1024;
+      fileSizeWarn.classList.toggle('visible', overLimit);
+      submitBtn.disabled = overLimit;
+    }
+
+    function showStatus(type, text) {
+      formStatus.className = 'form-status ' + type;
+      formStatus.textContent = text;
+    }
+
+    // Submit handler
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var action = form.getAttribute('action');
+      if (!action || action === 'FORMSPREE_ENDPOINT' || action.indexOf('formspree.io') === -1) {
+        showStatus('error', 'Form endpoint not configured yet \u2014 Mike needs to swap in the Formspree URL. Your feedback is appreciated though!');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formStatus.className = 'form-status';
+      formStatus.style.display = 'none';
+
+      var data = new FormData(form);
+      // Replace file input with our curated file list
+      data.delete('attachment');
+      selectedFiles.forEach(function(file) {
+        data.append('attachment', file, file.name);
+      });
+
+      fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          showStatus('success', '\u2705 Feedback sent! We got it and will follow up soon.');
+          form.reset();
+          document.getElementById('fb-name').value = 'Sophie';
+          selectedFiles = [];
+          while (previewGrid.firstChild) previewGrid.removeChild(previewGrid.firstChild);
+        } else {
+          throw new Error('Server returned ' + res.status);
+        }
+      }).catch(function() {
+        showStatus('error', 'Something went wrong \u2014 try again or text your feedback directly.');
+      }).finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Feedback';
+      });
+    });
+  })();
+  </script>
 
 </body>
 </html>
