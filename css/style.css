@@ -223,30 +223,18 @@ body {
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
   text-decoration: none;
   transition: opacity 0.3s ease;
   position: relative;
   z-index: 1002;
-  background: var(--gradient-holo);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
 }
 
-.nav-logo-icon {
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  -webkit-text-fill-color: initial;
+.nav-logo-img {
+  height: 42px;
+  width: auto;
+  border-radius: 6px;
 }
 
 .nav-logo:hover {
