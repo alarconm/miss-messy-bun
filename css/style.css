@@ -234,6 +234,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-logo-icon {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  -webkit-text-fill-color: initial;
 }
 
 .nav-logo:hover {
