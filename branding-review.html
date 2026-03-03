@@ -336,94 +336,6 @@
       padding-right: 2.5rem;
     }
 
-    /* Drop zone */
-    .drop-zone {
-      border: 2px dashed var(--border);
-      border-radius: 8px;
-      padding: 2rem 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      background: var(--surface);
-    }
-
-    .drop-zone:hover,
-    .drop-zone.dragover {
-      border-color: var(--teal);
-      background: rgba(92, 225, 230, 0.04);
-    }
-
-    .drop-zone-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .drop-zone-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .drop-zone-text strong {
-      color: var(--teal);
-    }
-
-    .drop-zone-hint {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-      opacity: 0.7;
-    }
-
-    /* Thumbnail previews */
-    .preview-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .preview-thumb {
-      position: relative;
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .preview-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .preview-thumb .remove-btn {
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 20px;
-      height: 20px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-    }
-
-    .file-size-warn {
-      color: #c0392b;
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
-      display: none;
-    }
-
-    .file-size-warn.visible { display: block; }
-
     /* Submit button */
     .submit-btn {
       display: inline-block;
@@ -748,7 +660,7 @@
       <h3>Your Feedback</h3>
       <p class="form-subtitle">Submit as many times as you want — each submission goes straight to our inbox.</p>
 
-      <form id="feedbackForm" action="https://formspree.io/f/xgolgokj" method="POST" enctype="multipart/form-data">
+      <form id="feedbackForm" action="https://formspree.io/f/xgolgokj" method="POST">
         <div class="form-group">
           <label for="fb-name">Name</label>
           <input type="text" id="fb-name" name="name" value="Sophie" required>
@@ -774,18 +686,6 @@
           <textarea id="fb-message" name="message" placeholder="What do you love? What should change? Be as specific as you want..." required></textarea>
         </div>
 
-        <div class="form-group">
-          <label>Images <span style="font-weight:400; text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; color:var(--text-muted);">(optional — screenshots, inspo, etc.)</span></label>
-          <div class="drop-zone" id="dropZone">
-            <div class="drop-zone-icon">📎</div>
-            <div class="drop-zone-text">Drag images here or <strong>tap to browse</strong></div>
-            <div class="drop-zone-hint">PNG, JPG, WEBP — up to 10 MB total</div>
-          </div>
-          <input type="file" id="fb-files" name="attachment" multiple accept="image/*" style="display:none;">
-          <div class="preview-grid" id="previewGrid"></div>
-          <div class="file-size-warn" id="fileSizeWarn">Total file size exceeds 10 MB — please remove some images.</div>
-        </div>
-
         <button type="submit" class="submit-btn" id="submitBtn">Send Feedback</button>
 
         <div class="form-status" id="formStatus"></div>
@@ -801,73 +701,8 @@
   <script>
   (function() {
     var form = document.getElementById('feedbackForm');
-    var dropZone = document.getElementById('dropZone');
-    var fileInput = document.getElementById('fb-files');
-    var previewGrid = document.getElementById('previewGrid');
-    var fileSizeWarn = document.getElementById('fileSizeWarn');
     var submitBtn = document.getElementById('submitBtn');
     var formStatus = document.getElementById('formStatus');
-
-    var selectedFiles = [];
-
-    // Drop zone click opens file picker
-    dropZone.addEventListener('click', function() { fileInput.click(); });
-
-    // Drag events
-    dropZone.addEventListener('dragover', function(e) {
-      e.preventDefault();
-      dropZone.classList.add('dragover');
-    });
-    dropZone.addEventListener('dragleave', function() {
-      dropZone.classList.remove('dragover');
-    });
-    dropZone.addEventListener('drop', function(e) {
-      e.preventDefault();
-      dropZone.classList.remove('dragover');
-      addFiles(e.dataTransfer.files);
-    });
-
-    // File input change
-    fileInput.addEventListener('change', function() {
-      addFiles(fileInput.files);
-      fileInput.value = '';
-    });
-
-    function addFiles(fileList) {
-      for (var i = 0; i < fileList.length; i++) {
-        if (fileList[i].type.startsWith('image/')) {
-          selectedFiles.push(fileList[i]);
-        }
-      }
-      renderPreviews();
-    }
-
-    function renderPreviews() {
-      while (previewGrid.firstChild) previewGrid.removeChild(previewGrid.firstChild);
-      var totalSize = 0;
-      selectedFiles.forEach(function(file, idx) {
-        totalSize += file.size;
-        var thumb = document.createElement('div');
-        thumb.className = 'preview-thumb';
-        var img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
-        img.alt = file.name;
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'remove-btn';
-        btn.textContent = '\u00d7';
-        btn.addEventListener('click', function() {
-          selectedFiles.splice(idx, 1);
-          renderPreviews();
-        });
-        thumb.appendChild(img);
-        thumb.appendChild(btn);
-        previewGrid.appendChild(thumb);
-      });
-      var overLimit = totalSize > 10 * 1024 * 1024;
-      fileSizeWarn.classList.toggle('visible', overLimit);
-      submitBtn.disabled = overLimit;
-    }
 
     function showStatus(type, text) {
       formStatus.style.display = '';
@@ -875,46 +710,29 @@
       formStatus.textContent = text;
     }
 
-    // Submit handler
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var action = form.getAttribute('action');
-      if (!action || action === 'FORMSPREE_ENDPOINT' || action.indexOf('formspree.io') === -1) {
-        showStatus('error', 'Form endpoint not configured yet \u2014 Mike needs to swap in the Formspree URL. Your feedback is appreciated though!');
+      if (!action || action.indexOf('formspree.io') === -1) {
+        showStatus('error', 'Form endpoint not configured yet.');
         return;
       }
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
-      formStatus.className = 'form-status';
       formStatus.style.display = 'none';
-
-      var data = new FormData(form);
-      // Formspree free tier doesn't support file uploads — strip files
-      // and add filenames as text so we know images were intended
-      data.delete('attachment');
-      if (selectedFiles.length > 0) {
-        var names = selectedFiles.map(function(f) { return f.name + ' (' + (f.size / 1024).toFixed(0) + ' KB)'; });
-        data.append('images_attached', names.join(', '));
-        data.append('image_note', 'Sophie attached ' + selectedFiles.length + ' image(s). Ask her to text/DM them.');
-      }
 
       fetch(action, {
         method: 'POST',
-        body: data,
+        body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
         if (res.ok) {
-          var hadImages = selectedFiles.length > 0;
-          var msg = '\u2705 Feedback sent! We got it and will follow up soon.';
-          if (hadImages) msg += ' We noted your images \u2014 text or DM them to us so we can see them!';
-          showStatus('success', msg);
+          showStatus('success', '\u2705 Feedback sent! We got it and will follow up soon.');
           form.reset();
           document.getElementById('fb-name').value = 'Sophie';
-          selectedFiles = [];
-          while (previewGrid.firstChild) previewGrid.removeChild(previewGrid.firstChild);
         } else {
-          throw new Error('Server returned ' + res.status);
+          throw new Error(res.status);
         }
       }).catch(function() {
         showStatus('error', 'Something went wrong \u2014 try again or text your feedback directly.');
