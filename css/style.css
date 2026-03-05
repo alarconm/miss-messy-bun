@@ -513,7 +513,7 @@ body {
 
 .photo-break img {
   width: 100%;
-  height: 900px;
+  height: 500px;
   object-fit: cover;
   object-position: center top;
   border-radius: 24px;
@@ -613,6 +613,7 @@ body {
   color: var(--white);
   border: none;
   border-radius: 50px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 
 .btn-holo:hover {
@@ -622,7 +623,7 @@ body {
 
 /* --- Sections --- */
 .section {
-  padding: 10rem 3rem;
+  padding: 7rem 3rem;
   position: relative;
 }
 
@@ -753,7 +754,7 @@ body {
 .philosophy {
   background: var(--cream);
   text-align: center;
-  padding: 10rem 3rem;
+  padding: 6rem 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -821,9 +822,11 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
   border-radius: 20px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -900,6 +903,7 @@ body {
 }
 
 .service-cta {
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -928,7 +932,7 @@ body {
 }
 
 .gallery-header {
-  padding: 10rem 3rem 4rem;
+  padding: 7rem 3rem 4rem;
 }
 
 .gallery-grid {
@@ -1074,6 +1078,9 @@ body {
   transition: all 0.3s ease;
   border-radius: 20px;
   border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .shop-card:hover {
@@ -1111,6 +1118,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
 .shop-card .promo-code {
@@ -1130,7 +1138,7 @@ body {
 /* --- CTA Section --- */
 .cta-section {
   text-align: center;
-  padding: 12rem 3rem;
+  padding: 8rem 3rem;
   position: relative;
   overflow: hidden;
   background: var(--cream);
@@ -1224,12 +1232,12 @@ body {
 .footer-social a {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dim);
+  color: var(--text-muted);
   text-decoration: none;
   transition: all 0.3s ease;
 }
