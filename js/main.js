@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('menu-open');
       });
     });
+
+    // Close menu on backdrop tap (clicking the overlay itself)
+    navLinks.addEventListener('click', (e) => {
+      if (e.target === navLinks) {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    });
   }
 
   // --- Navbar style on scroll ---
@@ -76,6 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Back to top visibility
     if (backToTop) {
       backToTop.classList.toggle('visible', scrollY > 600);
+    }
+
+    // Mobile booking bar visibility (show after scrolling past hero)
+    const mobileBar = document.getElementById('mobileBookingBar');
+    if (mobileBar) {
+      mobileBar.classList.toggle('visible', scrollY > 400);
     }
   }
 
