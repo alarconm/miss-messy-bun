@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Messy Bun Booking Preview | Internal Review</title>
+  <meta name="description" content="Internal preview page for the next Miss Messy Bun booking experience.">
+  <meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="preview-page">
+  <main class="preview-shell">
+    <section class="preview-hero">
+      <span class="preview-eyebrow">Internal Preview</span>
+      <h1>Miss Messy Bun Booking Lab</h1>
+      <p>
+        This page is for private testing and client setup only. The live site still sends customers
+        to the current Glambook flow until the new booking experience is fully approved.
+      </p>
+      <div class="preview-actions">
+        <a href="https://missmessybun.com/" class="btn btn-ghost">Back to live site</a>
+        <a href="https://web-production-662bd4.up.railway.app/book" target="_blank" rel="noopener" class="btn btn-primary">Open full booking app</a>
+      </div>
+    </section>
+
+    <section class="preview-card">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="eyebrow">Review Focus</span>
+        <h2>What to test on this page</h2>
+        <hr class="section-divider">
+      </div>
+      <div class="preview-checklist">
+        <span>Service names and descriptions</span>
+        <span>Mobile spacing and form layout</span>
+        <span>Booking flow and slot selection</span>
+        <span>Client intake fields</span>
+        <span>Brand alignment and tone</span>
+      </div>
+    </section>
+
+    <section class="preview-card">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="eyebrow">Service Routes</span>
+        <h2>Direct booking paths</h2>
+        <hr class="section-divider">
+        <p>Use these for testing service-specific flows while we finish setup.</p>
+      </div>
+
+      <div class="preview-service-grid">
+        <a href="https://web-production-662bd4.up.railway.app/book/loc-braid-services" target="_blank" rel="noopener" class="service-card">
+          <h3>Loc + Braid Services</h3>
+          <p>Starter locs, retwists, interlocking, cornrows, and all braid styles.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+        <a href="https://web-production-662bd4.up.railway.app/book/extensions" target="_blank" rel="noopener" class="service-card">
+          <h3>Extensions</h3>
+          <p>Sew-ins, beaded installs, K-tips, loc extensions, and related services.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+        <a href="https://web-production-662bd4.up.railway.app/book/precision-cuts" target="_blank" rel="noopener" class="service-card">
+          <h3>Precision Cuts</h3>
+          <p>Trim, shape, and style flows to validate the shortest booking journey.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+        <a href="https://web-production-662bd4.up.railway.app/book/wash-go-protective-styling" target="_blank" rel="noopener" class="service-card">
+          <h3>Wash &amp; Go / Protective Styling</h3>
+          <p>Defined curls, twist-outs, and protective style booking paths.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+        <a href="https://web-production-662bd4.up.railway.app/book/updos-blowout-styling" target="_blank" rel="noopener" class="service-card">
+          <h3>Updos &amp; Blowout Styling</h3>
+          <p>Event styling and blowout flows for timing and intake QA.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+        <a href="https://web-production-662bd4.up.railway.app/book/custom-herbal-steam-treatments" target="_blank" rel="noopener" class="service-card">
+          <h3>Custom Herbal Steam Treatments</h3>
+          <p>Holistic treatment route for content, timing, and notes validation.</p>
+          <span class="service-cta">Open route <span class="arrow">&rarr;</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="preview-card">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="eyebrow">Embedded Mode</span>
+        <h2>Site embed preview</h2>
+        <hr class="section-divider">
+        <p>This iframe/widget block is the piece we will switch back onto the live site once it is ready.</p>
+      </div>
+
+      <div class="booking-embed-shell">
+        <div data-studio-booking data-business="miss-messy-bun" data-booking-base="https://web-production-662bd4.up.railway.app"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://web-production-662bd4.up.railway.app/embeds/miss-messy-bun.js" defer></script>
+</body>
+</html>

@@ -936,6 +936,116 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 
+/* --- Internal Booking Preview Page --- */
+.preview-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(169, 17, 207, 0.08), transparent 35%),
+    radial-gradient(circle at top right, rgba(92, 225, 230, 0.08), transparent 35%),
+    var(--cream);
+}
+
+.preview-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.preview-hero,
+.preview-card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.preview-hero {
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.preview-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+}
+
+.preview-eyebrow::before {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.preview-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.02;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.preview-hero p {
+  max-width: 780px;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.preview-card {
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.preview-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.preview-checklist span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(169, 17, 207, 0.07);
+  border: 1px solid rgba(169, 17, 207, 0.14);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.preview-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.preview-service-grid .service-card {
+  min-height: 100%;
+}
+
 /* --- Portfolio / Gallery --- */
 .gallery {
   background: var(--cream);
@@ -1710,6 +1820,33 @@ body {
     border-radius: 18px;
   }
 
+  .preview-shell {
+    padding: 2rem 1rem 5rem;
+  }
+
+  .preview-hero,
+  .preview-card {
+    border-radius: 20px;
+  }
+
+  .preview-hero,
+  .preview-card {
+    padding: 1.5rem;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+  }
+
+  .preview-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .preview-service-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-icon {
     margin-bottom: 1rem;
   }
@@ -1909,6 +2046,10 @@ body {
   .hero-actions {
     flex-direction: column;
     width: 100%;
+  }
+
+  .preview-hero h1 {
+    font-size: 2rem;
   }
 
   .btn-primary,
